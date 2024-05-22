@@ -1,0 +1,119 @@
+<!-- subjectlist.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles1.css">
+    <title>Subject List - Parent Mentor App</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto; /* Add horizontal scrollbar if needed */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #F0EDCF;
+        }
+
+        .subject-name {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <!-- Replace with circular buttons -->
+            <a href="edit.html" class="circular-button">Edit</a>
+            <a href="notify.html" class="circular-button">Notify</a>
+            <a href="notification.html" class="circular-button">Notification</a>
+        </div>
+        <div class="header-buttons">
+            <!-- Use anchor tag for "About Us" button -->
+            <a href="index.html"><button>About Us</button></a>
+            <!-- Add a Logout button that redirects to another page -->
+            <a href="logout.html"><button>Logout</button></a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Your main content goes here -->
+        <h1>Subject List Page</h1>
+
+        <!-- Display subject name above the table -->
+        <div class="subject-name" id="subjectName"></div>
+
+        <!-- Add the table from studentlist.html -->
+        <table class="student-list-table">
+            <thead>
+                <tr>
+                    <th>USN</th>
+                    <th>Student Name</th>
+                </tr>
+            </thead>
+            <tbody id="studentDetails">
+                <!-- JavaScript will populate rows here -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <div class="contact-details">
+            <!-- Include your college contact details here -->
+            <p>Contact: your_email@example.com</p>
+        </div>
+        <div class="college-address">
+            <!-- Include your college address here -->
+            <p>College Address: 123 College Street, Cityville, State, Country</p>
+        </div>
+    </footer>
+
+    <script>
+        // Retrieve the subject parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const subject = urlParams.get('subject');
+
+        // Display the subject name on the page
+        const subjectNameElement = document.getElementById('subjectName');
+        if (subjectNameElement) {
+            subjectNameElement.textContent = `Subject Name: ${subject}`;
+        }
+
+        // Sample student data (replace this with your actual data)
+        const students = [
+            { usn: 'USN001', name: 'John Doe 1' },
+            { usn: 'USN002', name: 'John Doe 2' },
+            // Repeat similar entries for 10 students
+        ];
+
+        // Populate students dynamically
+        const studentDetailsElement = document.getElementById('studentDetails');
+        if (studentDetailsElement) {
+            students.forEach(student => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><a href="studentlist.html?usn=${student.usn}">${student.usn}</a></td>
+                    <td><a href="studentlist.html?usn=${student.usn}">${student.name}</a></td>
+                `;
+                studentDetailsElement.appendChild(row);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

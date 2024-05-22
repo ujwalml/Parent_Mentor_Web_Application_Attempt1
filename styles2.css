@@ -1,0 +1,51 @@
+body {
+    background-color: #000;
+    color: #0B60B0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  #main-container {
+    background-color: #F0EDCF;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: larger;
+    max-width: 400px; /* Set the maximum width */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  #buttons-container {
+    margin-top: 20px;
+  }
+  
+  .button {
+    background-color: #0B60B0;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+    border-radius: 5px;
+  }
+  
+  #parent-view,
+  #mentor-view,
+  #admin-view {
+    display: none;
+  }
+  
+  #parent-view:target,
+  #mentor-view:target,
+  #admin-view:target {
+    display: block;
+  }
+#login-form {
+  margin-top: 20px;
+}
+
+
+  

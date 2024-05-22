@@ -1,0 +1,160 @@
+<!-- edit.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles1.css">
+    <title>Edit - Parent Mentor App</title>
+    <style>
+        /* Add custom styles for the two-column layout */
+        .two-column-layout {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Style for the left and right parts */
+        .left-part, .right-part {
+            width: 48%; /* Adjust the width as needed */
+            padding: 20px;
+            border: 1px solid #ccc; /* Add border for separation */
+            margin-bottom: 20px;
+        }
+
+        /* Add styles for the table in the right part */
+        .subject-list-table, .student-list-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .subject-list-table th, .subject-list-table td, .student-list-table th, .student-list-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .subject-list-table th, .student-list-table th {
+            background-color: #F0EDCF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <!-- Replace with circular buttons -->
+            <a href="edit.html" class="circular-button">Edit</a>
+            <a href="notify.html" class="circular-button">Notify</a>
+            <a href="notificationmentor.html" class="circular-button">Notification</a>
+        </div>
+        <div class="header-buttons">
+            <!-- Use anchor tag for "About Us" button -->
+            <a href="index.html"><button>About Us</button></a>
+            <!-- Add a Logout button that redirects to another page -->
+            <a href="logout.html"><button>Logout</button></a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Your main content goes here -->
+        <h1>Edit Page</h1>
+
+        <!-- Two-column layout -->
+        <div class="two-column-layout">
+            <!-- Left part - Student List -->
+            <div class="left-part">
+                <h2>Student List</h2>
+                <!-- Add your content for Student List here -->
+                <table class="student-list-table">
+                    <thead>
+                        <tr>
+                            <th>USN</th>
+                            <th>Student Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add your student data rows here -->
+                        <!-- Modify the link to navigate to studentlist.html with usn parameter -->
+                        <!-- Repeat similar rows for 10 students -->
+                        <tr>
+                            <td><a href="studentlist.html?usn=USN001">USN001</a></td>
+                            <td><a href="studentlist.html?usn=USN001">John Doe 1</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="studentlist.html?usn=USN002">USN002</a></td>
+                            <td><a href="studentlist.html?usn=USN002">John Doe 2</a></td>
+                        </tr>
+                        <!-- Repeat similar rows for 10 students -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right part - Subject List -->
+            <div class="right-part">
+                <h2>Subject List</h2>
+                <!-- Add your content for Subject List here -->
+                <table class="subject-list-table">
+                    <thead>
+                        <tr>
+                            <th>Subjects</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Add your subject data rows here -->
+                        <!-- Repeat similar rows for 10 subjects -->
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject1">Subject 1</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject2">Subject 2</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject3">Subject 3</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject4">Subject 4</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject5">Subject 5</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject6">Subject 6</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject7">Subject 7</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject8">Subject 8</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject9">Subject 9</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="subjectlist.html?subject=Subject10">Subject 10</a></td>
+                        </tr>
+                        <!-- Repeat similar rows for 10 subjects -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="contact-details">
+            <!-- Include your college contact details here -->
+            <p>Contact: your_email@example.com</p>
+        </div>
+        <div class="college-address">
+            <!-- Include your college address here -->
+            <p>College Address: 123 College Street, Cityville, State, Country</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

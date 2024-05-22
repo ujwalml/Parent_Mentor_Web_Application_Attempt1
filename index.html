@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles1.css">
+    <title>Parent Mentor App</title>
+    <style>
+        /* Add styles for the feedback pop-up */
+        .feedback-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #F0EDCF;
+            border: 2px solid #0B60B0;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 999; /* Ensure it appears above other elements */
+        }
+
+        .feedback-popup h2 {
+            color: #0B60B0;
+            margin-bottom: 10px;
+        }
+
+        .feedback-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .feedback-popup-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .feedback-popup-button {
+            background-color: #0B60B0;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .clear-button {
+            background-color: #fff;
+            color: #0B60B0;
+            border: 1px solid #0B60B0;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: red;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <!-- Replace 'your_college_logo.png' with the actual filename and path of your college logo -->
+            <img src="your_college_logo.png" alt="College Logo">
+        </div>
+        <div class="header-buttons">
+            <!-- Use anchor tag for "About Us" button -->
+            <a href="index.html"><button>About Us</button></a>
+            <a href="register.html"><button>Register</button></a>
+            <a href="login.html"><button>Login</button></a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Your main content goes here -->
+        <div class="watermark">
+            <p>PARENT-MENTOR APP</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-details">
+            <!-- Include your college contact details here -->
+            <p>Contact: your_email@example.com</p>
+        </div>
+        <div class="college-address">
+            <!-- Include your college address here -->
+            <p>College Address: 123 College Street, Cityville, State, Country</p>
+        </div>
+    </footer>
+   <!-- Add the feedback pop-up -->
+   <div class="feedback-popup" id="feedbackPopup">
+    <div class="close-button" onclick="closeFeedbackPopup()">×</div>
+    <h2>Feedback</h2>
+    <input type="text" class="feedback-input" placeholder="Enter your feedback">
+    <div class="feedback-popup-buttons">
+        <a href="#" class="feedback-popup-button" onclick="submitFeedback()">Submit</a>
+        <a href="#" class="clear-button" onclick="clearFeedback()">Clear</a>
+    </div>
+</div>
+
+<script>
+    // Function to open the feedback pop-up
+    function openFeedbackPopup() {
+        const feedbackPopup = document.getElementById('feedbackPopup');
+        if (feedbackPopup) {
+            feedbackPopup.style.display = 'block';
+        }
+    }
+
+    // Function to close the feedback pop-up
+    function closeFeedbackPopup() {
+        const feedbackPopup = document.getElementById('feedbackPopup');
+        if (feedbackPopup) {
+            feedbackPopup.style.display = 'none';
+        }
+    }
+
+    // Function to submit feedback (you can modify this function as needed)
+    function submitFeedback() {
+        alert('Feedback submitted!'); // Replace this with your desired action
+        closeFeedbackPopup();
+    }
+
+    // Function to clear feedback input
+    function clearFeedback() {
+        const feedbackInput = document.querySelector('.feedback-input');
+        if (feedbackInput) {
+            feedbackInput.value = '';
+        }
+    }
+
+    // Check if there is a parameter in the URL indicating feedback should be opened
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('openFeedback')) {
+        openFeedbackPopup();
+    }
+</script>
+</body>
+
+</html>

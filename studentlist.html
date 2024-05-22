@@ -1,0 +1,123 @@
+<!-- studentlist.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles1.css">
+    <title>Student List - Parent Mentor App</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto; /* Add horizontal scrollbar if needed */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #F0EDCF;
+        }
+
+        .student-name {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <!-- Replace with circular buttons -->
+            <a href="edit.html" class="circular-button">Edit</a>
+            <a href="notify.html" class="circular-button">Notify</a>
+            <a href="notification.html" class="circular-button">Notification</a>
+        </div>
+        <div class="header-buttons">
+            <!-- Use anchor tag for "About Us" button -->
+            <a href="index.html"><button>About Us</button></a>
+            <!-- Add a Logout button that redirects to another page -->
+            <a href="logout.html"><button>Logout</button></a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Your main content goes here -->
+        <h1>Student List Page</h1>
+
+        <!-- Display student name above the table -->
+        <div class="student-name" id="studentName"></div>
+
+        <!-- Add the table from marks.html -->
+        <table class="marks-table">
+            <thead>
+                <tr>
+                    <th>Subjects</th>
+                    <th>IA 1</th>
+                    <th>IA 2</th>
+                    <th>IA 3</th>
+                    <th>Assignment 1</th>
+                    <th>Assignment 2</th>
+                </tr>
+            </thead>
+            <tbody id="subjectDetails">
+                <!-- JavaScript will populate rows here -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <div class="contact-details">
+            <!-- Include your college contact details here -->
+            <p>Contact: your_email@example.com</p>
+        </div>
+        <div class="college-address">
+            <!-- Include your college address here -->
+            <p>College Address: 123 College Street, Cityville, State, Country</p>
+        </div>
+    </footer>
+
+    <script>
+        // Retrieve the USN parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const usn = urlParams.get('usn');
+
+        // Display the student name on the page
+        const studentNameElement = document.getElementById('studentName');
+        if (studentNameElement) {
+            studentNameElement.textContent = `Student Name: ${usn}`;
+        }
+
+        // Sample subjects data (replace this with your actual data)
+        const subjects = ['Subject 1', 'Subject 2', 'Subject 3', 'Subject 4', 'Subject 5', 'Subject 6', 'Subject 7', 'Subject 8', 'Subject 9', 'Subject 10'];
+
+        // Populate subjects dynamically
+        const subjectDetailsElement = document.getElementById('subjectDetails');
+        if (subjectDetailsElement) {
+            subjects.forEach(subject => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><a href="subjectlist.html?subject=${subject}&usn=${usn}">${subject}</a></td>
+                    <td>IA 1 Score</td>
+                    <td>IA 2 Score</td>
+                    <td>IA 3 Score</td>
+                    <td>Assignment 1 Score</td>
+                    <td>Assignment 2 Score</td>
+                `;
+                subjectDetailsElement.appendChild(row);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!-- marks.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles1.css">
+    <title>Marks - Parent Mentor App</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto; /* Add horizontal scrollbar if needed */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #F0EDCF;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <!-- Replace with circular buttons -->
+            <a href="marks.html" class="circular-button">Marks</a>
+            <a href="attendance.html" class="circular-button">Attendance</a>
+            <a href="notificationparent.html" class="circular-button">Notification</a>
+        </div>
+        <div class="header-buttons">
+            <!-- Use anchor tag for "About Us" button -->
+            <a href="index.html"><button>About Us</button></a>
+            <!-- Add a Logout button that redirects to another page -->
+            <a href="logout.html"><button>Logout</button></a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Your main content goes here -->
+        <h1>Marks Page</h1>
+
+        <!-- Add a table with 6 columns -->
+        <table class="marks-table">
+            <thead>
+                <tr>
+                    <th>SUBJECTS</th>
+                    <th>IA 1</th>
+                    <th>IA 2</th>
+                    <th>IA 3</th>
+                    <th>ASSIGNMENT 1</th>
+                    <th>ASSIGNMENT 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add your table data here -->
+                <tr>
+                    <td>Subject 1</td>
+                    <td>IA 1 Score</td>
+                    <td>IA 2 Score</td>
+                    <td>IA 3 Score</td>
+                    <td>Assignment 1 Score</td>
+                    <td>Assignment 2 Score</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add Analyze button towards the right-bottom corner -->
+    <div class="analyze-button">
+        <button class="custom-button">Analyze</button>
+    </div>
+
+    <footer>
+        <div class="contact-details">
+            <!-- Include your college contact details here -->
+            <p>Contact: your_email@example.com</p>
+        </div>
+        <div class="college-address">
+            <!-- Include your college address here -->
+            <p>College Address: 123 College Street, Cityville, State, Country</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

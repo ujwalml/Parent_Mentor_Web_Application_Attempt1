@@ -1,0 +1,63 @@
+<!-- login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
+    <title>Login - Parent Mentor App</title>
+</head>
+
+<body>
+
+    <div id="main-container">
+        <!-- Add About Us button -->
+        <a href="index.html"><button class="button">About Us</button></a>
+
+        <h2>Login Page</h2>
+        <hr>
+        <br>
+
+        <div id="login-form">
+            <!-- Add labels and input fields for user_id, password, and usn(if parent) -->
+            <div class="input-container">
+                <input type="text" id="user_id" name="user_id" placeholder="User ID" required>
+            </div>
+
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+
+            <div class="input-container">
+                <input type="text" id="usn" name="usn" placeholder="USN (if parent)">
+            </div>
+
+            <!-- Modify the button to execute the login function -->
+            <button onclick="performLogin()">Login</button>
+        </div>
+    </div>
+
+    <!-- Include the script to handle login logic -->
+    <script>
+        function performLogin() {
+            // Get values from input fields
+            var userId = document.getElementById("user_id").value;
+            var password = document.getElementById("password").value;
+            var usn = document.getElementById("usn").value;
+
+            // Check if USN is provided (parent login) or not (mentor login)
+            if (usn !== "") {
+                // Redirect to parent.html
+                window.location.href = "parent.html";
+            } else {
+                // Redirect to mentor.html
+                window.location.href = "mentor.html";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

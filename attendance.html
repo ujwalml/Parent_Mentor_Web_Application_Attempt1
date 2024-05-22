@@ -1,0 +1,115 @@
+<!-- attendance.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles1.css">
+    <title>Attendance - Parent Mentor App</title>
+    <style>
+        /* Add custom styles for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto; /* Add horizontal scrollbar if needed */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #F0EDCF;
+        }
+
+        /* Add styles for the Analyze button */
+        .analyze-button {
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <!-- Replace with circular buttons -->
+            <a href="marks.html" class="circular-button">Marks</a>
+            <a href="attendance.html" class="circular-button">Attendance</a>
+            <a href="notificationparent.html" class="circular-button">Notification</a>
+        </div>
+        <div class="header-buttons">
+            <!-- Use anchor tag for "About Us" button -->
+            <a href="index.html"><button>About Us</button></a>
+            <!-- Add a Logout button that redirects to another page -->
+            <a href="logout.html"><button>Logout</button></a>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Your main content goes here -->
+        <h1>Attendance Page</h1>
+
+        <!-- Table with specified columns -->
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sl No.</th>
+                        <th>USN</th>
+                        <th>Name of the Student</th>
+                        <th>Subject 1</th>
+                        <th>Subject 2</th>
+                        <th>Subject 3</th>
+                        <th>Subject 4</th>
+                        <th>Subject 5</th>
+                        <th>Subject 6</th>
+                        <th>Subject 7</th>
+                        <th>Subject 8</th>
+                        <th>Subject 9</th>
+                        <th>Subject 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Add your attendance data rows here -->
+                    <!-- Example row:
+                    <tr>
+                        <td>1</td>
+                        <td>USN123</td>
+                        <td>John Doe</td>
+                        <td>Present</td>
+                        <td>Absent</td>
+                        Add data for other subjects -->
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add Analyze button towards the right-bottom corner -->
+    <div class="analyze-button">
+        <button class="custom-button">Analyze</button>
+    </div>
+
+    <footer>
+        <div class="contact-details">
+            <!-- Include your college contact details here -->
+            <p>Contact: your_email@example.com</p>
+        </div>
+        <div class="college-address">
+            <!-- Include your college address here -->
+            <p>College Address: 123 College Street, Cityville, State, Country</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

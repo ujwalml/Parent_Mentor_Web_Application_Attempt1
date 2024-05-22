@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles2.css">
+</head>
+<body>
+
+  <div id="main-container">
+    <!-- Add About Us and Login buttons -->
+    <div id="about-login-buttons">
+      <!-- Use a elements for About Us and Login buttons -->
+      <a href="index.html" class="button">About Us</a>
+      <a href="login.html" class="button" id="login-button">Login</a>
+    </div>
+    <br>
+    <hr>
+    <p id="about-us">PARENT-MENTOR REGISTER PAGE</p>
+    <hr>
+    <br>
+
+    <div id="buttons-container">
+      <!-- Update href attributes for parent, mentor, and admin -->
+      <a href="#parent-view" class="button">Parent</a>
+      <a href="#mentor-view" class="button">Mentor</a>
+      <a href="#admin-view" class="button">Admin</a>
+    </div>
+    <br>
+    <div id="parent-view">
+      <!-- Add five rectangular boxes for inputs with labels inside -->
+      <div class="input-box">
+        <input type="text" id="parent-name" name="parent-name" placeholder="Name">
+      </div>
+
+      <div class="input-box">
+        <input type="text" id="parent-usn" name="parent-usn" placeholder="Student USN">
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="parent-password" name="parent-password" placeholder="Password">
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="parent-new-password" name="parent-new-password" placeholder="New Password">
+      </div>
+
+      <!-- File input with label "Your Pic" -->
+      <div class="centered-input-box">
+        <label for="parent-your-pic">Your Pic:</label>
+        <input type="file" id="parent-your-pic" name="parent-your-pic" accept="image/*">
+      </div>
+
+      <!-- Verification text for not a robot -->
+      <p id="parent-verification-text"></p>
+    </div>
+
+    <div id="mentor-view">
+      <!-- Add three rectangular boxes for mentor inputs with labels inside -->
+      <div class="input-box">
+        <input type="text" id="mentor-name" name="mentor-name" placeholder="Name">
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="mentor-password" name="mentor-password" placeholder="Password">
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="mentor-confirm-password" name="mentor-confirm-password" placeholder="Confirm Password">
+      </div>
+
+      <!-- File input with label "Choose File" -->
+      <div class="centered-input-box">
+        <label for="mentor-choose-file">Id Card:</label>
+        <input type="file" id="mentor-choose-file" name="mentor-choose-file" accept="image/*">
+      </div>
+
+      <!-- Verification text for not a robot -->
+      <p id="mentor-verification-text"></p>
+    </div>
+
+    <div id="admin-view">
+      <h2>Admin View</h2>
+      <!-- Content for Admin View -->
+    </div>
+
+    <!-- Add Login section with redirect button -->
+    <div id="login" class="input-box">
+      <a href="login.html"><button id="login-redirect">REGISTER</button></a>
+    </div>
+
+  </div>
+
+  <script>
+    // JavaScript code for file verification and redirect
+    document.getElementById('parent-your-pic').addEventListener('change', function(event) {
+      handleFileVerification(event, 'parent-verification-text');
+    });
+
+    document.getElementById('mentor-choose-file').addEventListener('change', function(event) {
+      handleFileVerification(event, 'mentor-verification-text');
+    });
+
+    function handleFileVerification(event, verificationTextId) {
+      const fileInput = event.target;
+      const verificationText = document.getElementById(verificationTextId);
+
+      if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const fileType = file.type.split('/')[0]; // Get file type (e.g., 'image')
+
+        if (fileType === 'image') {
+          verificationText.innerText = "UR NOT A ROBOT!!";
+        } else {
+          verificationText.innerText = "Invalid file type. Please choose an image.";
+        }
+      }
+    }
+
+    document.getElementById('login-redirect').addEventListener('click', function() {
+      // Redirect to another page (replace 'your_redirect_page.html' with the actual page)
+      window.location.href = 'your_redirect_page.html';
+    });
+  </script>
+
+</body>
+</html>
